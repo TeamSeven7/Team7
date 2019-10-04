@@ -1,5 +1,5 @@
 ## Team7
-# Welcome to LaserOps, a Multiplayer Arcade game that brings back all your 90s vibes back!
+# Welcome to LaserOps, a multiplayer arcade game that brings all your 90's vibes back!
 LaserOps is packed with exciting levels, difficult obstacles to surpass and loads of fun!
 
 # How to Play:-
