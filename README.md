@@ -1,16 +1,17 @@
-# Team7
-# Welcome to LaserOps, a Multiplayer Arcade game that brings back all your 90s vibes back..
-LaserOps is packed with Exciting levels, difficult obstacles to surpass and Loads of Fun.
+## Team7
+# Welcome to LaserOps, a multiplayer arcade game that brings all your 90's vibes back!
+LaserOps is packed with exciting levels, difficult obstacles to surpass and loads of fun!
 
-#How to Play:-
-  1.The maximum Number of players in a game are 4.
-  2.Choose your favourite Planet and Knockout the Opponent planets using Laser Pointers.
-  3.Use WASD/ UP,DOWN,LEFT,RIGHT keys to navigate your Planet.
-  4.That's the game. Happy Gaming!
+# How to Play:-
+  1.The maximum number of players in the game are 4.
+  2.Choose your favourite planet and knockout the opponent planets using laser pointers.
+  3.Use WASD/ UP,DOWN,LEFT,RIGHT keys to navigate your planet.
   
-#Minimum Requirements:-
-  4 Individual Computers
-  Decent WiFi Speed
+# Minimum Requirements:-
+  1. 4 Individual Computers
+  2. Decent WiFi Speed
+  
+# That's the game! Happy Gaming!
   
  
- --TeamSeven7
+--TeamSeven7
