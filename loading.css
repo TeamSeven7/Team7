@@ -37,7 +37,7 @@ h1{
     left: 50%;
     transform: translate(-50,-50%);
     animation: move 2s infinite;
-    \animation-iteration-count: 5;;
+    animation-iteration-count: infinite;
 }
 .box .b1{
     border-color: #4a69bd;
