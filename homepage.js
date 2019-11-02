@@ -1,25 +1,23 @@
+
 (function () {
 	
-
     var w = window;
-        
-    // Find vendor prefix, if any
+    // Finding  vendor prefix if any
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for( var i = 0; i < vendors.length && !w.requestAnimationFrame; i++ ) {
         w.requestAnimationFrame = w[vendors[i]+'RequestAnimationFrame'];
     }
-    
-    // Use requestAnimationFrame if available
+    // Use requestAnimationFrame if it's available
     if( w.requestAnimationFrame ) {
         var next = 1, 
-            anims = {};
+            move = {};
                 
         w.setAnimation = function( callback, element ) {
             var current = next++;
-            anims[current] = true;
+            move[current] = true;
             
             var animate = function() {
-                if( !anims[current] ) { return; } // deleted?
+                if( !move[current] ) { return; } // deleted?
                 w.requestAnimationFrame( animate, element );
                 callback();
             };
@@ -28,11 +26,11 @@
         };
         
         w.clearAnimation = function( id ) {
-            delete anims[id];
+            delete move[id];
         };
     }
     
-    // [set/clear]Interval fallback
+    // setting and clearing animation ..
     else {
         w.setAnimation = function( callback, element ) {
             return w.setInterval( callback, 1000/60 );
@@ -41,7 +39,7 @@
     }
     
     
-    // Perlin Noise function for tumbling and dust movement -----------------------
+    // Perlin Noise function for tumbling and dust movements..
     
     var PerlinNoise = function( size ) {
         this.gx = [];
@@ -109,7 +107,7 @@
     };
     
     
-    // Image preloader ------------------------------------------------------------
+    // Image preloader ..
     
     var preload = function( images, callback ) {
         var remaining = 0;
@@ -134,10 +132,9 @@
     };
     
     
-    // Set up ---------------------------------------------------------------------
     
     // Get Canvas, create Noise function, register 'resize' and 'mousemove'
-    // handlers and preload images
+    // handlers and preload images..
     
     var canvas = document.getElementById('bg');
     var ctx = null;
@@ -173,8 +170,8 @@
         ctx.fillRect(0,0,canvas.width,canvas.height);
     
         images = preload({
-                  background: 'http://1.bp.blogspot.com/-W5PQYSCVIz0/UczHmtwYdyI/AAAAAAAAEV4/A_Dvss-vdCM/s1600/Pictures%2Bof%2BDeep%2BSpace-737842.jpg',
-                vignette: 'https://i.stack.imgur.com/SdTGE.png',
+                background: 'https://lh3.googleusercontent.com/NyhJRU_1Y2mUqIQ_2BZfE4eUZRRwu2zXcRl6hQiueI2K5pX71d4C3c-qaz7h0m4MOLH9RADHAZFrVg0JmVZoSfveHJI6C-rfAqTSALu_j0SOcQk1x-b_U7LCspgajcm2yZLHYz7OfvPupjPdjAH1CL-7BMhJX-MI0qXLB2pxf12ETO4wIkMA_vqnlHYPOnf9oXosvPFauh_SwY7SRbu9F3qQZcKKBlD93TRGQnscZqge__kXfKYDvl5qQdewzPeGbss3DynByCGNFQtaGjXz-Mw7kIlOLFR1y_PnZM6769Bc1m4bNtHCGw9V8Q3VzExsOTb_zIvsWF_gc_U3mZvLUsvQtkusb1qXVqZ8Itapy0J4WZirxFRmDFOnzNGDxkgBJu3_xh1NtqTdDjyvxbFt26I0Ulr2BW_s1D1VNUbfcujXfQRLJlSG_AcUS-W6l9_wpfL6sGxck3YZVnS0sTagqBPh_2dNAsT3dWM0E1QrZgVJ2-h4rPkx7-TghgldTpQLK6CWt6SEtcEmTOIsAdhBm6acWIAr8NLGV_xy1RcEha4widmxi4NazDgGeHMQHigh6GXmNBEtcXhqdFB2p19Myy0HniIE38w7WmEChhop-SE8KD77AhThwWDc5hco7bQVqaMo8cocl7vbwDztAk79bQDzd_5j0TvBt5AAuanuYfHGyeAsjVO4M0A=w1280-h720-no',
+                vignette: 'https://lh3.googleusercontent.com/kZhB3psJcaI5zWX5QIwAlqdVjAbzts51Zx-DCodK6sg4i7P3iK-b_4zDTBGkV0NjjOIykNgGSjDeEGi4pkUr7l2pdXn_LIjUU5ZGUCWbKOY9Iy57LKZhHR39VWmvqMslQdNmdRM7mOD-waisFMyKN_WgzkJgEv5lLEng89D7Nb1euUVTW0FR4sY-wp0nVu2ri3naMJS6MOrB9AzV_-lKCn1a1XQLa58Rd7Vc04O8rYaA3Qq5UPawPUiTEgh1sprQzSd0bWB9tCrAiRIZO1qcnHQLx3Y51oH_jCLWznq4EBHGFcPFbyUP1N_s1R4Pl3W8rWQtkkpHvroMYVLy1ZNjePFl61esYqbwqnYloSsmEweh06KHFubFCRyfzn-tuy1mxVDXNSFt9Ioo8PEA__At03TZC1T3kgZcjcEkdXj3gduGj4VRsAIkVEwxdr4CmwZFgSnlovJDTou-L5tZ6nzEcB91eY3pOZFkxEDh7EMjWY5vOtIuqoG3T79Rw1K9N8R7XYuXtEjFySMbiuwhqGF9eeNZEDylaCi9xkLpXFvAQsXtsCS00w0nUYw5w4pLVHgRaH6uXTe0UmCVoIdxFdNPux-eX9XYGiofLklp6fPUeZqYqhl_NUH8OLeDlFTO4SviKbBlWXlRscSfflyFKj2xu6-htMWm_YVCu47-4waz_cZNiJGVaZgaQL8=s200-no',
                 dustNear: 'https://i.ytimg.com/vi/KsHUrwV0Kek/maxresdefault.jpg',
                 dustFar: 'https://i.ytimg.com/vi/KsHUrwV0Kek/maxresdefault.jpg'
             }, function() {

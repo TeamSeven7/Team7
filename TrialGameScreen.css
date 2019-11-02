@@ -3,3 +3,10 @@
     height :300px;
     width: 800px;
 }
+#player {
+    position: absolute;
+    background: url(Player_pixels/player_sprites/P1.gif);
+    width: 55px;
+    height: 154px;
+    border:1px solid;
+}

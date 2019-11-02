@@ -6,27 +6,32 @@
      <meta charset="utf-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
      <script type="text/javascript" src="Homepage.js"></script>
+    <!-- <audio autoplay loop="true">
+        <source src="Soundtracks/M83 - Starwaves (Extended).mp3" type="audio/mpeg">
+      </audio>-->
 </head>
+
 
 <!-- Buttons -->
 
 <body>
-       
-
+         <!-- I've uploaded the logo to google and got the image address of it so it could appear in any PC without a problem -->
+    <img src="https://lh3.googleusercontent.com/AXndCIfcWBqEHJTsIJVBZ21nrXpUcKTkVAiifBZbi_KLOMOq2YeaG4HjvjVe4kPYkuE5SCaf8PaMjHyrwrpqH7OfEbyR-Y1xZ5FIFYTv7x2DnJBFvv80ycvpJkDx9JIbq9cIYvLYOA3gWthP6nZFeoEGwyW95jOUg6dLWueAeGVzqxXsXO92ja8A1eo8EEDTMbnR4QbyYZYpfqS9CgioUMWSPocoypUjoy_sI3arYauedB6f5Qr8GwjLFwztKHU6wTHIaEjc8ECsNyeLJ7KFEluQAldmqp4aeTtDcmUgn8W02BbYJyz3Vc0mC5kb_sfrhLtu5KF4c4r6MPhgzWEbbamKvwAP9u9KlyFZgQTJiw2aTURJKtTTaympP0FCL4QqGDHj4R2mdCg5-t7QLPpcXniTO5gfAPTl_yfYoYKWNhi5Dxrc0AEzwcn_q_mUGI5z_Gn0LG9WNtXx6MHIcPb0N3BFqgmf6KdHryLmKQnigzKN3Oo7XioiEG_FOynyhFN7so9VPC5qfYMY2r9TnOUPd9Ct7_ehUWg7h_JCrvitlPfTp_Mm0IWflkgPS-1fcul_8K21UZIDAbFB0yrILholKzLxX195jESU3oaGAYHOeXwSXSjh6YQe-PzXCN5Vwtc4JnnqQ2-4_vqCqAqrgIZtmTYW9g_0gWbHNYvYCIpmMNKg-woFI_AxPEU=w2000-h1428-no" class="logo"/>
+  </div>
   <a href="choosingplanets.html"> <button class="startbtn" id="neon-text1">START</button></a>
       <button class="optionsbtn" id="neon-text2">OPTIONS</button>
-         <button class="helpbtn" id="neon-text3">HELP</button>
+      <a href="Helppage.html"><button class="helpbtn" id="neon-text3">HELP</button>
  
-            <img src="https://i.imgur.com/17kxb7w.png" class="logo"/>
-          </div>
-        
+
 <style>
 
 .logo
     {
       position: absolute;
-      top: 30px;
-      left: 50px;
+      top: 3%;
+      right: 350px;
+      width: 750px;
+   
     }
 
 </style>
@@ -69,8 +74,8 @@
       touch-action: manipulation;
       cursor: pointer;
       background-color: transparent;
-      border: 2px solid #1E90FF;
-      color: #86a6e2;
+      border: 2px solid rgb(119, 0, 255);
+      color: #ff00f6;
       transition: all 0.3s ease;
       -webkit-appearance: none;
       -moz-border-radius: 5px;
@@ -92,7 +97,7 @@
     .startbtn:hover {
       -webkit-animation: intermittente 0.01s infinite alternate;
       animation: intermittente 0.01s infinite alternate;
-       box-shadow: 0px 0px 35px rgba(0,0,255,0.3), 0 0 11px rgba(0,0,255,0.3), 0 0 2px rgba(255, 0, 0, 0.3), 0 0 1px rgba(0,0,255,0.3), 0 0px 17px rgba(0,0,255,0.3), inset 0px 0 17px rgba(0,0,255,0.3), inset 0px 0 30px rgba(0,0,255,0.3);
+       box-shadow: 0px 0px 35px rgb(255,0,0), 0 0 11px rgb(255,0,0), 0 0 2px rgb(255,0,0), 0 0 1px rgb(255,0,0), 0 0px 17px rgb(255,0,0), inset 0px 0 17px rgb(255,0,0), inset 0px 0 30px rgb(255,0,0);
     }
 
       .optionsbtn {
@@ -112,8 +117,8 @@
       touch-action: manipulation;
       cursor: pointer;
       background-color: transparent;
-      border: 2px solid #1E90FF;
-      color: #86a6e2;
+      border: 2px solid rgb(119, 0, 255);
+      color: #ff00f6;
       transition: all 0.3s ease;
       -webkit-appearance: none;
       -moz-border-radius: 5px;
@@ -136,8 +141,7 @@
     .optionsbtn:hover {
       -webkit-animation: intermittente 0.01s infinite alternate;
       animation: intermittente 0.01s infinite alternate;
-     box-shadow: 0px 0px 35px rgba(0,0,255,0.3), 0 0 11px rgba(0,0,255,0.3), 0 0 2px rgba(255, 0, 0, 0.3), 0 0 1px rgba(0,0,255,0.3), 0 0px 17px rgba(0,0,255,0.3), inset 0px 0 17px rgba(0,0,255,0.3), inset 0px 0 30px rgba(0,0,255,0.3);
-    }
+      box-shadow: 0px 0px 35px rgb(255,0,0), 0 0 11px rgb(255,0,0), 0 0 2px rgb(255,0,0), 0 0 1px rgb(255,0,0), 0 0px 17px rgb(255,0,0), inset 0px 0 17px rgb(255,0,0), inset 0px 0 30px rgb(255,0,0);    }
       
       
       .helpbtn{
@@ -157,8 +161,8 @@
       touch-action: manipulation;
       cursor: pointer;
       background-color: transparent;
-      border: 2px solid #1E90FF;
-      color: #86a6e2;
+      border: 2px solid rgb(119, 0, 255);
+      color: #ff00f6;
       transition: all 0.3s ease;
       -webkit-appearance: none;
       -moz-border-radius: 5px;
@@ -179,8 +183,7 @@
       .helpbtn:hover {
       -webkit-animation: intermittente 0.01s infinite alternate;
       animation: intermittente 0.01s infinite alternate;
-      box-shadow: 0px 0px 35px rgba(0,0,255,0.3), 0 0 11px rgba(0,0,255,0.3), 0 0 2px rgba(255, 0, 0, 0.3), 0 0 1px rgba(0,0,255,0.3), 0 0px 17px rgba(0,0,255,0.3), inset 0px 0 17px rgba(0,0,255,0.3), inset 0px 0 30px rgba(0,0,255,0.3);
-    }
+      box-shadow: 0px 0px 35px rgb(255,0,0), 0 0 11px rgb(255,0,0), 0 0 2px rgb(255,0,0), 0 0 1px rgb(255,0,0), 0 0px 17px rgb(255,0,0), inset 0px 0 17px rgb(255,0,0), inset 0px 0 30px rgb(255,0,0);    }
   </style>
 
     </body>
