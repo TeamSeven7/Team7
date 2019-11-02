@@ -1,13 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    background: #e55039;
+     background: #e55039; 
 
 }
 h1{
     text-align: center;
     margin: 0%;
     margin-top: 16%;
+    color: aliceblue;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: oblique;
 
