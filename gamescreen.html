@@ -2,6 +2,10 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src ="jquery.js"></script>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <meta charset="utf-8" />
     <title>Movement of Players.</title>
     
@@ -12,14 +16,23 @@
             height :300px;
             width: 800px;
         }
-        #player {
+        #player1 {
 
             position: absolute;
             background: url(Player_pixels/player_sprites/P1.gif) no-repeat;
-            width: 100px;
-            height: 154px;
-            border:1px solid;
+            width: 55px;
+            height: 55px;
+            
         }
+        #player2 {
+            position: relative;
+            background: url(Player_pixels/player_sprites/P4.gif) no-repeat;
+            width: 55px;
+            height: 55px;
+           
+
+        }
+       
     </style>
     
     
@@ -29,9 +42,14 @@
     
     <h1>!Main Game Screen!</h1>
     
-    <script src="GameScreen.js"></script>
+    <script src="FinalGameScreen.js"></script>
+    <script src ="jquery.js"></script>
+    
     <div id="map"></div>
-   <!-- <div id="player"></div>  -->
+   <!-- <div id="player1"></div> 
+   <br><br><br><br> 
+   <div id="player2"></div> -->
+   
 </body>
 
 </html>
