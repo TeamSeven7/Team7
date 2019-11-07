@@ -42,11 +42,11 @@ function ensureSprite(sprite){
    if(sprite.y < 100){
    	sprite.y=100;
    }
-   if(sprite.x + sprite.w > 480){
-   	sprite.x = 480 - sprite.w;
+   if(sprite.x + sprite.w > 1200){
+   	sprite.x = 1200 - sprite.w;
    }
-   if(sprite.y + sprite.h > 480){
-   	sprite.y = 480 - sprite.h;
+   if(sprite.y + sprite.h > 680){
+   	sprite.y = 680 - sprite.h;
    }
 
 }
