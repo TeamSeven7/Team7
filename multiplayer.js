@@ -4,19 +4,25 @@ const dataparser=require("body-parser");
 const urlencodedParser=
 dataparser.urlencoded({extended:false});
 
-
-app.get ('/gamescreen',function(req,res)
+app.get ('/',function(req,res)
 { 
-    
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/gamescreen.html',{root : __dirname});
+    res.sendFile('HomePage.html',{root : __dirname});
 }
 );
 
-// app.get ('/loader',function(req,res)
-// { 
-//     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/loader.html',{root : __dirname});
-// }
-// );
+app.get ('/gamescreen',function(req,res)
+{ 
+    res.sendFile('/gamescreen.html',{root : __dirname});
+}
+);
+
+app.get ('/loader',function(req,res)
+{ 
+    res.sendFile('loader.html',{root : __dirname});
+}
+);
 
 app.listen(53906,function()
-{console.log("Listening at server port 53906")});
+{
+    console.log("Listening at server port 53906");
+});
