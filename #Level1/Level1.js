@@ -236,6 +236,7 @@ function ensureSprite(sprite){
   function checkHealthOne() {
     
   }
+
   
   
   function collisionCheckingPlayers(sprite) {
@@ -272,6 +273,10 @@ function ensureSprite(sprite){
       P1Health--;
       document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
   }
+  if (P1Health==-100)
+{
+  gameover();
+}
 
 }
 
@@ -308,6 +313,10 @@ function collisionCheckingPlayersTwo(sprite) {
   if (touches(sprite, enemylaser8))  {
     P2Health--;
     document.getElementById("healthcounter2").innerHTML = "Health: " + P2Health;
+}
+if (P2Health==-100)
+{
+  gameover();
 }
 
 }

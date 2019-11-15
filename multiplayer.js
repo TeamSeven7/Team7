@@ -4,23 +4,18 @@ const dataparser=require("body-parser");
 const urlencodedParser=
 dataparser.urlencoded({extended:false});
 
-app.get ('/',function(req,res)
+// app.get ('/',function(req,res)
+// { 
+//     res.sendFile('C:\Users\mohit\Documents\GitHub\Team7\#Level1\Level1.html',{root : __dirname});
+// }
+// );
+app.get ('/game',function(req,res)
 { 
-    res.sendFile('HomePage.html',{root : __dirname});
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/#Level1/Level1.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/#Level1/Level1.js');
 }
 );
 
-app.get ('/gamescreen',function(req,res)
-{ 
-    res.sendFile('/gamescreen.html',{root : __dirname});
-}
-);
-
-app.get ('/loader',function(req,res)
-{ 
-    res.sendFile('loader.html',{root : __dirname});
-}
-);
 
 app.listen(53906,function()
 {

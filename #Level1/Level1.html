@@ -12,7 +12,7 @@
 		left:1200px;
 	}
 	#Playerone{
-		background-image:url("https://cdn2.vectorstock.com/i/1000x1000/15/26/space-rocket-take-off-science-spaceship-launch-vector-15361526.jpg");
+		background-image:url(img/player1.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -21,17 +21,25 @@
 		
 }
 	#Playertwo{
-		background-image:url("https://cdn2.vectorstock.com/i/1000x1000/15/26/space-rocket-take-off-science-spaceship-launch-vector-15361526.jpg");
+		background-image:url(img/player2.gif);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
 		height: 100px;
 		position: absolute;
 }	
-		
+#gameover {
+    color: #ff0000;
+    font-size: 100px;
+    font-family: "Luminari";
+    position: absolute;
+    left: 410px;
+    top: 300px;
+    visibility: hidden;
+  }	
 
 	#Enemyone{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -41,7 +49,7 @@
 		
 }	
 	#Enemytwo{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -50,7 +58,7 @@
 		left: calc(65% - 32.5px)
 }	
 	#Enemythree{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -59,7 +67,7 @@
 		left: calc(55% - 32.5px)
 }	
 	#Enemyfour{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -68,7 +76,7 @@
 		left: calc(45% - 32.5px)
 }	
 	#Enemyfive{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -77,7 +85,7 @@
 		left: calc(35% - 32.5px)
 }	
 	#Enemysix{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -86,7 +94,7 @@
 		left: calc(25% - 32.5px)
 }	
 	#Enemyseven{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -95,7 +103,7 @@
 		left: calc(15% - 32.5px);
 }	
 	#Enemyeight{
-		background-image:url("http://the-void.co.uk/wp-content/uploads/2013/08/space-invader.jpg");
+		background-image:url(img/enemy.pn);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
@@ -106,7 +114,7 @@
 
 
 	#background{
-		background: rgb(98, 113, 197);
+		background-image: url(img/L2Background.jpg);
 		width: 1300px;
 		height: 700px;
 		position: absolute;
@@ -202,6 +210,7 @@
 <div id="Playerone"></div>
 <div id="Playertwo"></div>
 <div id= "laser"> </div>
+<div id= "gameover">Game Over </div>
 <div id="lasertwo"></div>
 <div id="Enemyone"></div>
 <div id="Enemytwo"></div>
