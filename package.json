@@ -1,0 +1,23 @@
+{
+  "name": "team7",
+  "version": "1.0.0",
+  "description": "LaserOps is packed with exciting levels, difficult obstacles to surpass and loads of fun!",
+  "main": "multiplayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamSeven7/Team7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamSeven7/Team7/issues"
+  },
+  "homepage": "https://github.com/TeamSeven7/Team7#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

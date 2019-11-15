@@ -3,6 +3,7 @@ var PTLeft =37, PTRight=39, PTUp=38, PTDown=40;
 var Space=32;
 var testshoot= 9;
 var PTShoot=13;
+var POShoot=13;
 var move_playertwo=10;
 var move_playertwotwo=10;
 var ll=0;
@@ -53,6 +54,9 @@ if(keyCode == Space){
     con2.down = isPressed;
    }
    if(keyCode == PTShoot){
+    con2.enter = isPressed;
+   }
+   if(keyCode == POShoot){
     con2.enter = isPressed;
    }
    if(keyCode == testshoot){

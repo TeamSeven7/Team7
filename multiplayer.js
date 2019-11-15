@@ -12,10 +12,9 @@ dataparser.urlencoded({extended:false});
 app.get ('/game',function(req,res)
 { 
     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/#Level1/Level1.html');
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/#Level1/Level1.js');
 }
 );
-
+app.use('/game',express.static(__dirname + '/client'));
 
 app.listen(53906,function()
 {
