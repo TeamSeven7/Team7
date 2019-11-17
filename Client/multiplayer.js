@@ -1,5 +1,6 @@
 const express=require ("express");
 const app=express();
+var serveStatic = require('serve-static')
 const dataparser=require("body-parser");
 const urlencodedParser=
 dataparser.urlencoded({extended:false});
@@ -9,18 +10,16 @@ dataparser.urlencoded({extended:false});
 //     res.sendFile('C:\Users\mohit\Documents\GitHub\Team7\#Level1\Level1.html',{root : __dirname});
 // }
 // );
-app.use(express.static('Client/img'))
+app.use(express.static('img'))
 app.get ('/home',function(req,res)
 { 
     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/Homepage.html');
 }
 );
 
-
-
-app.get ('/game',function(req,res)
+app.get ('/level1',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/#Level1/Level1.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/%23Level1/Level1.html');
 }
 );
 
