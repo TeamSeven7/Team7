@@ -1,26 +1,29 @@
-const express=require ("express");
-const app=express();
-const dataparser=require("body-parser");
-const urlencodedParser=
-dataparser.urlencoded({extended:false});
+var express=require ("express");
+var app=express();
+var path = require("path");
+
+
 
 // app.get ('/',function(req,res)
 // { 
 //     res.sendFile('C:\Users\mohit\Documents\GitHub\Team7\#Level1\Level1.html',{root : __dirname});
 // }
 // );
-app.use(express.static('Client/img'))
-app.get ('/home',function(req,res)
+app.use("/", function(req,res,next){
+
+    console.log(req.url);
+    next();
+});
+app.use(express.static(path.join(__dirname,"img")));
+app.get ('/',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/Homepage.html');
+    res.sendFile(path.join(__dirname,"Client","homepage.html"));
 }
 );
 
-
-
-app.get ('/game',function(req,res)
+app.get ('/level1',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/#Level1/Level1.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/%23Level1/Level1.html');
 }
 );
 
