@@ -27,9 +27,14 @@ app.get ('/level1',function(req,res)
 }
 );
 
-app.get ('Helppage.html',function(req,res)
+app.get ('/Helppage.html',function(req,res)
 { 
     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/Helppage.html');
+}
+);
+app.get ('/resume',function(req,res)
+{ 
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2-UPDATED/index.html');
 }
 );
 
