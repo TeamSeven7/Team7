@@ -23,7 +23,7 @@ app.get ('/',function(req,res)
 
 app.get ('/level1',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/Level1.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/%23Level1/Level1.html');
 }
 );
 
@@ -34,7 +34,7 @@ app.get ('/Helppage.html',function(req,res)
 );
 app.get ('/resume',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/level2-updated.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2-UPDATED/index.html');
 }
 );
 
