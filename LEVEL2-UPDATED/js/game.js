@@ -204,7 +204,9 @@ function createEnemyLaser($container, x, y) {
   LASEROPS_STATE.enemyLasers.push(laser);
   setPosition($element, x, y);
 }
-
+function healthp1{
+  
+}
 function updateEnemyLasers(dt, $container) {
   const lasers = LASEROPS_STATE.enemyLasers;
   for (let i = 0; i < lasers.length; i++) {
