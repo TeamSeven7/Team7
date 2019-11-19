@@ -77,6 +77,17 @@ function createPlayer($container) {
   setPosition($player, LASEROPS_STATE.playerX, LASEROPS_STATE.playerY);
 }
 
+
+function createPlayer_p2($container) {
+  LASEROPS_STATE.playerX = GAME_WIDTH / 2;
+  LASEROPS_STATE.playerY = GAME_HEIGHT - 50;
+  const $player = document.createElement("img");
+  $player.src = "img/p1-single.png";
+  $player.className = "player";
+  $container.appendChild($player);
+  setPosition($player, LASEROPS_STATE.playerX, LASEROPS_STATE.playerY);
+}
+
 function destroyPlayer($container, player) {
   $container.removeChild(player);
   LASEROPS_STATE.gameOver = true;
@@ -240,6 +251,7 @@ function init() {
   document.getElementById('score').innerHTML = score;
   const $container = document.querySelector(".game");
   createPlayer($container);
+  createPlayer_p2($container);
 
   const enemySpacing =
     (GAME_WIDTH - ENEMY_HORIZONTAL_PADDING * 2) / (ENEMIES_PER_ROW - 1);
