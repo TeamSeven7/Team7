@@ -3,6 +3,8 @@
 # Welcome to LaserOps, a multiplayer arcade game that brings all your 90's vibes back!
 LaserOps is packed with exciting levels, difficult obstacles to surpass and loads of fun!
 
+![Repo List] (logo.png)
+
 # How to Play:-
 
   1. The maximum number of players in the game are 2.
