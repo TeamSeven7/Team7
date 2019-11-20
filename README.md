@@ -5,15 +5,15 @@ LaserOps is packed with exciting levels, difficult obstacles to surpass and load
 
 # How to Play:-
 
-  1. The maximum number of players in the game are 4.
+  1. The maximum number of players in the game are 2.
   
   2. Choose your favorite planet and knockout the opponent planets using laser pointers.
   
-  3. Use WASD/ UP,DOWN,LEFT,RIGHT keys to navigate your planet.
+  3. Use W/A/S/D/ space to shoot _ UP,DOWN,LEFT,RIGHT Enter to shoot keys to navigate your planet.
   
 # Minimum Requirements:-
 
-  1. 4 Individual Computers
+  1. 2 Individual Computers
   2. Decent WiFi Speed
   
 # That's the game! Happy Gaming!
