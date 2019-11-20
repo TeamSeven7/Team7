@@ -1,9 +1,10 @@
 ## Team7
 
 # Welcome to LaserOps, a multiplayer arcade game that brings all your 90's vibes back!
+
+![logo](https://user-images.githubusercontent.com/46518343/69248989-a5202980-0bc6-11ea-9e6b-1992f56797be.png)
+
 LaserOps is packed with exciting levels, difficult obstacles to surpass and loads of fun!
-
-
 
 # How to Play:-
 
