@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 //     next();
 // });
 
-app.use(express.static('C:/User/mohit/Documents/GitHub/Team7/Client/img'));
+app.use(express.static('img',{root : __dirname}));
 app.get ('/homepage.html',function(req,res)
 { 
     res.sendFile('homepage.html',{root : __dirname});
@@ -35,7 +35,6 @@ app.get ('/resume',function(req,res)
     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2/level2-updated.html');
 }
 );
-
 
 app.listen(53906,function()
 {
