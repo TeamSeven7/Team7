@@ -1,0 +1,236 @@
+<html>
+<head>
+<style>
+
+	#healthcounter {
+		position:absolute;
+		bottom: 110px;
+	}
+	#healthcounter2 {
+		position:absolute;
+		bottom: 110px;
+		left:1200px;
+	}
+	#Playerone{
+		background-image:url(img/player1.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		
+}
+	#Playertwo{
+		background-image:url(img/player2.gif);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+}	
+#gameover {
+    color: #ff0000;
+    font-size: 100px;
+    font-family: "Luminari";
+    position: absolute;
+    left: 410px;
+    top: 300px;
+    visibility: hidden;
+  }	
+
+	#Enemyone{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(75% - 32.5px);
+		
+}	
+	#Enemytwo{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(65% - 32.5px)
+}	
+	#Enemythree{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(55% - 32.5px)
+}	
+	#Enemyfour{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(45% - 32.5px)
+}	
+	#Enemyfive{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(35% - 32.5px)
+}	
+	#Enemysix{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(25% - 32.5px)
+}	
+	#Enemyseven{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(15% - 32.5px);
+}	
+	#Enemyeight{
+		background-image:url(img/enemy.pn);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+		left: calc(5% - 32.5px)
+}	
+
+
+	#background{
+		background-image: url(img/L2Background.jpg);
+		width: 1300px;
+		height: 700px;
+		position: absolute;
+		left:0px;
+		top:0px;
+		z-index: -1;
+}
+
+	
+	#laser{
+		background: rgb(0,255,0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#lasertwo{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+
+	#enemylaser{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser2{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser3{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser4{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser5{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser6{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser7{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser8{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+    
+
+
+	
+	
+</style>
+</head>
+<body>
+		<p align="bottom" >
+
+		<div id="healthcounter"></div>
+
+		</p>
+	
+		<p align="bottom" >
+
+		<div id="healthcounter2"></div>
+		
+		</p>
+	<p align="center" >
+<div id="background"></div>
+	</p>
+<div id="Playerone"></div>
+<div id="Playertwo"></div>
+<div id= "laser"> </div>
+<div id= "gameover">Game Over </div>
+<div id="lasertwo"></div>
+<div id="Enemyone"></div>
+<div id="Enemytwo"></div>
+<div id="Enemythree"></div>
+<div id="Enemyfour"></div>
+<div id="Enemyfive"></div>
+<div id="Enemysix"></div>
+<div id="Enemyseven"></div>
+<div id="Enemyeight"></div>
+<div id="enemylaser"></div>
+<div id="enemylaser2"></div>
+<div id="enemylaser3"></div>
+<div id="enemylaser4"></div>
+<div id="enemylaser5"></div>
+<div id="enemylaser6"></div>
+<div id="enemylaser7"></div>
+<div id="enemylaser8"></div>
+
+
+<script src="Level1.js">
+</script>
+</body>
+</html>

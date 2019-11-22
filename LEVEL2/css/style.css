@@ -67,11 +67,26 @@ body {
   width: 40px;
 }
 
+.game .player2 {
+  position: absolute;
+  left:-50px;
+  margin-left: -20px;
+  width: 40px;
+}
+
 .game .laser {
   position: absolute;
   margin-left: -2.5px;
   height: 30px;
 }
+
+.game .laser2 {
+  position: absolute;
+  left:-50px;
+  margin-left: -2.5px;
+  height: 30px;
+}
+
 
 .game .enemy-laser {
   position: absolute;
