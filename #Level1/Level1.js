@@ -280,6 +280,7 @@ function ensureSprite(sprite){
   if (P1Health==-100)
 {
   gameover();
+  redirec 
 }
 
 }
