@@ -10,7 +10,7 @@ LaserOps is packed with exciting levels, difficult obstacles to surpass and load
 
   1. The maximum number of players in the game are 2.
   
-  2. Choose your favorite planet and knockout the opponent planets using laser pointers.
+  2. knockout the eniemes before the other player to win the game !! 
   
   3. Use W/A/S/D/ space to shoot _ UP,DOWN,LEFT,RIGHT Enter to shoot keys to navigate your planet.
   
