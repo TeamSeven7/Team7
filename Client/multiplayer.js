@@ -15,17 +15,18 @@ app.get ('/homepage.html',function(req,res)
     res.sendFile('homepage.html',{root : __dirname});
 });
 
+app.use(express.static('C:/User/mohit/Documents/GitHub/Team7/Client/LEVEL1'));
 app.get ('/level1',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/%23Level1/Level1.html');
-}
-);
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/LEVEL1/Level1.html');
+});
+
 app.use(express.static('C:/Users/mohit/Documents/GitHub/Team7/Client'));
 app.get ('/Helppage',function(req,res)
 { 
     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/Helppage.html');
-}
-);
+});
+
 app.use(express.static('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2'));
 app.get ('/resume',function(req,res)
 { 
