@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 // });
 
 app.use(express.static('C:/User/mohit/Documents/GitHub/Team7/Client/img'));
-app.get ('/homepage.html',function(req,res)
+app.get ('/',function(req,res)
 { 
     res.sendFile('homepage.html',{root : __dirname});
 });
