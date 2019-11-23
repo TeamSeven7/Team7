@@ -7,9 +7,11 @@ var POShoot=13;
 var move_playertwo=10;
 var move_playertwotwo=10;
 var ll=0;
-var P1Health = 3;
-var P2Health = 3;
+var P1Health = 100;
+var P2Health = 100;
 var EnemiesDead = 0;
+var P1Score = 0;
+var P2Score = 0;
 
   
  var con=new Object();
@@ -248,6 +250,8 @@ function ensureSprite(sprite){
  
   function collisionChecking(sprite){
     if (touches(sprite, laser)) {
+        P1Score = P1Score + 1;
+        document.getElementById("scorecounter").innerHTML = "P1 Score: " + P1Score;
         EnemiesDead = EnemiesDead + 1;
       var element = document.getElementById(sprite.element);
       element.style.backgroundImage = "url('https://media1.giphy.com/media/sNOnZHzeX86Fa/source.gif')";
@@ -261,6 +265,8 @@ function ensureSprite(sprite){
         }
     }
     if (touches(sprite, lasertwo)) {
+        P2Score = P2Score + 1;
+        document.getElementById("scorecounter2").innerHTML = "P2 Score: " + P2Score;
         EnemiesDead = EnemiesDead + 1;
       var background2 = document.getElementById(sprite.backgroundImage); 
       var element2 = document.getElementById(sprite.element);
@@ -275,7 +281,7 @@ function ensureSprite(sprite){
         }
     }
     if (EnemiesDead == 13) {
-        alert("Continue to Next Level");
+        alert("Congratulations! Please continue to the  next level.");
   window.location ='/Users/usamaaibani/Desktop/Team7-master/Client/LEVEL2/Level2.html';
   clearInterval(interval);
     }
@@ -338,7 +344,7 @@ function ensureSprite(sprite){
       document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
     }
     
-  if (P1Health==-100)
+  if (P1Health==0)
 {
   alert("Continue to Next Level");
   window.location ='/Users/usamaaibani/Desktop/Team7-master/Client/LEVEL2/Level2.html';
@@ -402,7 +408,7 @@ function collisionCheckingPlayersTwo(sprite) {
     document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
   } 
   
-if (P2Health==-100)
+if (P2Health==0)
 {
   alert("Continue to Next Level");
   window.location ='/Users/usamaaibani/Desktop/Team7-master/Client/LEVEL2/Level2.html';
