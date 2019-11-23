@@ -1,16 +1,35 @@
 <html>
 <head>
 <style>
-
+	
 	#healthcounter {
 		position:absolute;
 		bottom: 110px;
+		color:rgb(255, 0, 212);
+		font-size: large;
+		font-style: italic;
 	}
+	
 	#healthcounter2 {
 		position:absolute;
 		bottom: 110px;
 		left:1200px;
+		color:rgb(255, 0, 212);
+		font-size: large;
+		font-style: italic;
 	}
+	
+	#scorecounter {
+		position:absolute;
+		bottom: 90px;
+		left:1200px;
+	}
+	
+	#scorecounter2 {
+		position:absolute;
+		bottom: 90px;
+	}
+	
 	#Playerone{
 		background-image:url(img/player1.png);
 		background-repeat:no-repeat;
@@ -28,16 +47,7 @@
 		height: 100px;
 		position: absolute;
 }	
-#gameover {
-    color: #ff0000;
-    font-size: 100px;
-    font-family: "Luminari";
-    position: absolute;
-    left: 410px;
-    top: 300px;
-    visibility: hidden;
-  }	
-
+	
 	#Enemyone{
 		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
@@ -102,17 +112,69 @@
 		position: absolute;
 		left: calc(15% - 32.5px);
 }	
+    
 	#Enemyeight{
-		background-image:url(img/enemy.pn);
+		background-image:url(img/enemy.png);
 		background-repeat:no-repeat;
 		background-size:100%;
 		width: 65px;
 		height: 100px;
 		position: absolute;
-		left: calc(5% - 32.5px)
+        left: calc(19% - 32.5px);
+        top: 100px;
+}	
+	#Enemynine{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+        left: calc(29% - 32.5px);
+        top: 100px;
+}	
+	#Enemyten{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+        left: calc(39% - 32.5px);
+        top: 100px;
+}	
+	#Enemyeleven{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+        left: calc(49% - 32.5px);
+        top: 100px;
+}	
+	#Enemytwelve{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+        left: calc(59% - 32.5px);
+        top: 100px;
+}	
+	#Enemythirteen{
+		background-image:url(img/enemy.png);
+		background-repeat:no-repeat;
+		background-size:100%;
+		width: 65px;
+		height: 100px;
+		position: absolute;
+        left: calc(69% - 32.5px);
+        top: 100px;
 }	
 
-
+	
 	#background{
 		background-image: url(img/L2Background.jpg);
 		width: 1300px;
@@ -122,7 +184,6 @@
 		top:0px;
 		z-index: -1;
 }
-
 	
 	#laser{
 		background: rgb(0,255,0);
@@ -131,12 +192,11 @@
 		position: absolute;
 }
 	#lasertwo{
-		background: rgb(255, 0, 0);
+		background: rgb(0, 255, 0);
 		width: 4px;
 		height: 20px;
 		position: absolute;
 }
-
 	#enemylaser{
 		background: rgb(255, 0, 0);
 		width: 4px;
@@ -184,10 +244,40 @@
 		width: 4px;
 		height: 20px;
 		position: absolute;
+		
 }
+	#enemylaser9{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser10{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser11{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser12{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+	#enemylaser13{
+		background: rgb(255, 0, 0);
+		width: 4px;
+		height: 20px;
+		position: absolute;
+}
+
     
-
-
 	
 	
 </style>
@@ -204,6 +294,16 @@
 		<div id="healthcounter2"></div>
 		
 		</p>
+		<p align="bottom" >
+
+		<div id="scorecounter"></div>
+			
+		</p>
+		<p align="bottom" >
+
+		<div id="scorecounter2"></div>
+				
+	</p>
 	<p align="center" >
 <div id="background"></div>
 	</p>
@@ -220,6 +320,11 @@
 <div id="Enemysix"></div>
 <div id="Enemyseven"></div>
 <div id="Enemyeight"></div>
+<div id="Enemynine"></div>
+<div id="Enemyten"></div>
+<div id="Enemyeleven"></div>
+<div id="Enemytwelve"></div>
+<div id="Enemythirteen"></div>
 <div id="enemylaser"></div>
 <div id="enemylaser2"></div>
 <div id="enemylaser3"></div>
@@ -228,6 +333,11 @@
 <div id="enemylaser6"></div>
 <div id="enemylaser7"></div>
 <div id="enemylaser8"></div>
+<div id="enemylaser9"></div>
+<div id="enemylaser10"></div>
+<div id="enemylaser11"></div>
+<div id="enemylaser12"></div>
+<div id="enemylaser13"></div>
 
 
 <script src="Level1.js">

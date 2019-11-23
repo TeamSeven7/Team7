@@ -14,7 +14,7 @@ var con = mysql.createConnection({
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  var sql = "insert into highscore values ('mohit',500);";
+  var sql = "insert into highscore values ('vicky',1500);";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("inserted name Mohit with score 500");

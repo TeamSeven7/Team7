@@ -6,7 +6,7 @@
                 var name=document.getElementById("name").value;
                 var score=document.getElementById("score").value;
                 var httpr = new XMLHttpRequest();
-                httpr.open("POST","./ajaxFile/get_data.php",true);
+                httpr.open("POST","./ajaxFile/getData.php",true);
                 httpr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
                 httpr.onreadystatechange=function(){
                     if(httpr.readyState==4 && httpr.status==200){
