@@ -279,7 +279,9 @@ function ensureSprite(sprite){
   }
   if (P1Health==-100)
 {
-  gameover();
+  alert("Continue to Next Level");
+  window.location ='/Users/usamaaibani/Desktop/Team7-master/Client/LEVEL2/Level2.html';
+  clearInterval(interval);
 }
 
 }
@@ -320,7 +322,9 @@ function collisionCheckingPlayersTwo(sprite) {
 }
 if (P2Health==-100)
 {
-  gameover();
+  alert("Continue to Next Level");
+  window.location ='/Users/usamaaibani/Desktop/Team7-master/Client/LEVEL2/Level2.html';
+  clearInterval(interval);
 }
 
 }
