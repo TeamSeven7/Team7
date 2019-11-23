@@ -24,17 +24,17 @@ app.get ('/homepage.html',function(req,res)
 
 app.get ('/LEVEL1/Level1.html',function(req,res)
 { 
-    res.sendFile('C:/Users/2001a/Documents/GitHub/Team7/Client/LEVEL1/Level1.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/LEVEL1/Level1.html');
 });
 
 app.get ('/Helppage.html',function(req,res)
 { 
-    res.sendFile('C:/Users/2001a/Documents/GitHub/Team7/Client/Helppage.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/Helppage.html');
 });
 
 app.get ('/resume',function(req,res)
 { 
-    res.sendFile('C:/Users/2001a/Documents/GitHub/Team7/LEVEL2/level2-updated.html');
+    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2/level2-updated.html');
 }
 );
 
