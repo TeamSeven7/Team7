@@ -9,6 +9,7 @@ var move_playertwotwo=10;
 var ll=0;
 var P1Health = 3;
 var P2Health = 3;
+var EnemiesDead = 0;
 
   
  var con=new Object();
@@ -141,11 +142,12 @@ function ensureSprite(sprite){
       enemylaser6.x = Enemysix.x + 30 ;
       enemylaser6.y = Enemysix.y - enemylaser6.h;
     }
-    
-    if(enemylaser8.y >= 0 ){
-      enemylaser8.x = Enemyeight.x + 30 ;
-      enemylaser8.y = Enemyeight.y - enemylaser8.h;
+    if(enemylaser10.y >= 0 ){
+      enemylaser10.x = Enemyten.x + 30 ;
+      enemylaser10.y = Enemyten.y - enemylaser10.h;
     }
+    
+    
   }
 
   var enemyshootingrepeat2 = window.setInterval(enemyShootingTwo, 7000);
@@ -159,11 +161,6 @@ function ensureSprite(sprite){
       enemylaser4.x = Enemyfour.x + 30 ;
       enemylaser4.y = Enemyfour.y - enemylaser4.h;
     }
-  }
-  
-  var enemyshootingrepeat3 = window.setInterval(enemyShootingThree, 3000);
-
-  function enemyShootingThree() {
     if(enemylaser3.y >= 0 ){
       enemylaser3.x = Enemythree.x + 30 ;
       enemylaser3.y = Enemythree.y - enemylaser3.h;
@@ -171,6 +168,35 @@ function ensureSprite(sprite){
     if(enemylaser7.y >= 0 ){
       enemylaser7.x = Enemyseven.x + 30 ;
       enemylaser7.y = Enemyseven.y - enemylaser7.h;
+    }
+
+  }
+  
+  var enemyshootingrepeat3 = window.setInterval(enemyShootingThree, 3000);
+
+  function enemyShootingThree() {
+    
+    
+    if(enemylaser8.y >= 0 ){
+      enemylaser8.x = Enemyeight.x + 30 ;
+      enemylaser8.y = Enemyeight.y - enemylaser8.h;
+    }
+    if(enemylaser9.y >= 0 ){
+      enemylaser9.x = Enemynine.x + 30 ;
+      enemylaser9.y = Enemynine.y - enemylaser9.h;
+    }
+    
+    if(enemylaser11.y >= 0 ){
+      enemylaser11.x = Enemyeleven.x + 30 ;
+      enemylaser11.y = Enemyeleven.y - enemylaser11.h;
+    }
+    if(enemylaser12.y >= 0 ){
+      enemylaser12.x = Enemytwelve.x + 30 ;
+      enemylaser12.y = Enemytwelve.y - enemylaser12.h;
+    }
+    if(enemylaser13.y >= 0 ){
+      enemylaser13.x = Enemythirteen.x + 30 ;
+      enemylaser13.y = Enemythirteen.y - enemylaser13.h;
     }
   }
 
@@ -187,6 +213,11 @@ function ensureSprite(sprite){
     setMove(enemylaser6);
     setMove(enemylaser7);
     setMove(enemylaser8);
+    setMove(enemylaser9);
+    setMove(enemylaser10);
+    setMove(enemylaser11);
+    setMove(enemylaser12);
+    setMove(enemylaser13);
     
   }
 
@@ -195,12 +226,18 @@ function ensureSprite(sprite){
     lasertwo.y -= 20;
     enemylaser.y += 7;
     enemylaser2.y += 4.2;
-    enemylaser3.y += 7;
+    enemylaser3.y += 4.2;
     enemylaser4.y += 4.2;
     enemylaser5.y += 7;
     enemylaser6.y += 7;
-    enemylaser7.y += 8;
-    enemylaser8.y += 7;        
+    enemylaser7.y += 4.2;
+    enemylaser8.y += 7;
+    enemylaser9.y += 7;
+    enemylaser10.y += 7;
+    enemylaser11.y += 7;
+    enemylaser12.y += 7;
+    enemylaser13.y += 7;
+            
   }
 
   function touches(a, b) {
@@ -211,6 +248,7 @@ function ensureSprite(sprite){
  
   function collisionChecking(sprite){
     if (touches(sprite, laser)) {
+        EnemiesDead = EnemiesDead + 1;
       var element = document.getElementById(sprite.element);
       element.style.backgroundImage = "url('https://media1.giphy.com/media/sNOnZHzeX86Fa/source.gif')";
         laser.y = -laser.h; 
@@ -223,6 +261,7 @@ function ensureSprite(sprite){
         }
     }
     if (touches(sprite, lasertwo)) {
+        EnemiesDead = EnemiesDead + 1;
       var background2 = document.getElementById(sprite.backgroundImage); 
       var element2 = document.getElementById(sprite.element);
       element2.style.backgroundImage = "url('https://i.gifer.com/3iCN.gif')";
@@ -235,10 +274,11 @@ function ensureSprite(sprite){
           
         }
     }
-  }
-
-  function checkHealthOne() {
-    
+    if (EnemiesDead == 13) {
+        alert("Continue to Next Level");
+  window.location ='/Users/usamaaibani/Desktop/Team7-master/Client/LEVEL2/Level2.html';
+  clearInterval(interval);
+    }
   }
 
   
@@ -276,7 +316,28 @@ function ensureSprite(sprite){
     if (touches(sprite, enemylaser8))  {
       P1Health--;
       document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
-  }
+  } 
+    if (touches(sprite, enemylaser9))  {
+      P1Health--;
+      document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+    }
+    if (touches(sprite, enemylaser10))  {
+      P1Health--;
+      document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+    }
+    if (touches(sprite, enemylaser11))  {
+      P1Health--;
+      document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+    }
+    if (touches(sprite, enemylaser12))  {
+      P1Health--;
+      document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+    }
+    if (touches(sprite, enemylaser13))  {
+      P1Health--;
+      document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+    }
+    
   if (P1Health==-100)
 {
   alert("Continue to Next Level");
@@ -317,9 +378,30 @@ function collisionCheckingPlayersTwo(sprite) {
     document.getElementById("healthcounter2").innerHTML = "Health: " + P2Health;
 }
   if (touches(sprite, enemylaser8))  {
-    P2Health--;
-    document.getElementById("healthcounter2").innerHTML = "Health: " + P2Health;
-}
+    P1Health--;
+    document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+  } 
+  if (touches(sprite, enemylaser9))  {
+    P1Health--;
+    document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+  } 
+  if (touches(sprite, enemylaser10))  {
+    P1Health--;
+    document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+  } 
+  if (touches(sprite, enemylaser11))  {
+    P1Health--;
+    document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+  } 
+  if (touches(sprite, enemylaser12))  {
+    P1Health--;
+    document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+  } 
+  if (touches(sprite, enemylaser13))  {
+    P1Health--;
+    document.getElementById("healthcounter").innerHTML = "Health: " + P1Health;
+  } 
+  
 if (P2Health==-100)
 {
   alert("Continue to Next Level");
@@ -344,6 +426,11 @@ function loop(){
     collisionChecking(Enemysix);
     collisionChecking(Enemyseven);
     collisionChecking(Enemyeight);
+    collisionChecking(Enemynine);
+    collisionChecking(Enemyten);
+    collisionChecking(Enemyeleven);
+    collisionChecking(Enemytwelve);
+    collisionChecking(Enemythirteen);
     collisionCheckingPlayers(Playerone);
     collisionCheckingPlayersTwo(Playertwo);
     
@@ -371,7 +458,12 @@ var Enemyfour=DeclaringObjects('Enemyfour',650,-20,65,40);
 var Enemyfive=DeclaringObjects('Enemyfive',490,20,65,40);  
 var Enemysix=DeclaringObjects('Enemysix',330,20,65,40);    
 var Enemyseven=DeclaringObjects('Enemyseven',170,20,65,40);
-var Enemyeight=DeclaringObjects('Enemyeight',10,20,65,40);  
+var Enemyeight=DeclaringObjects('Enemyeight',240,20,65,40);
+var Enemynine=DeclaringObjects('Enemynine',400,20,65,40);
+var Enemyten=DeclaringObjects('Enemyten',560,20,65,40);
+var Enemyeleven=DeclaringObjects('Enemyeleven',720,20,65,40);
+var Enemytwelve=DeclaringObjects('Enemytwelve',880,20,65,40);
+var Enemythirteen=DeclaringObjects('Enemythirteen',1040,20,65,40);
 var laser=DeclaringObjects('laser',0,-120,5,50);
 var lasertwo=DeclaringObjects('lasertwo',0,-120,5,50);
 var enemylaser=DeclaringObjects('enemylaser',1160,20,5,50);
@@ -381,7 +473,12 @@ var enemylaser4=DeclaringObjects('enemylaser4',690,20,5,50);
 var enemylaser5=DeclaringObjects('enemylaser5',530,20,5,50);
 var enemylaser6=DeclaringObjects('enemylaser6',370,20,5,50);
 var enemylaser7=DeclaringObjects('enemylaser7',230,20,5,50);
-var enemylaser8=DeclaringObjects('enemylaser8',80,20,5,50);
+var enemylaser8=DeclaringObjects('enemylaser8',300,130,5,50);
+var enemylaser9=DeclaringObjects('enemylaser9',460,20,5,50);
+var enemylaser10=DeclaringObjects('enemylaser10',620,20,5,50);
+var enemylaser11=DeclaringObjects('enemylaser11',780,20,5,50);
+var enemylaser12=DeclaringObjects('enemylaser12',940,20,5,50);
+var enemylaser13=DeclaringObjects('enemylaser13',1100,130,5,50);
 
 
      loop();
