@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LASER OPS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+     <div class="canvas">
+        <div style="clear: both">
+          <header style="float: left;"> PLAYER 1 | Life : <span id="health">0</span> | Score : <span id="score"></span></header>
+          
+
+      </div>
+      <div style="clear: both">
+         <header style="float: right;"> PLAYER 2 | Life : <span id="healthtwo">0</span> | Score : <span id="scoretwo"></span><header>
+
+      </div>
+      <hr />
+     <div class="game-canvas">
+      <div class="game"></div>
+
+      <div class="congratulations">
+        <h1>CONGRATULATIONS</h1>
+        <h2> 🎉 PLAYER ONE WINNS🎉 </h2>
+        <h2><h2 > PLAYER ONE SCORE :  <span id="total"></span> <h2 style="color:red;"> PLAYER TWO LOST !!</h2>
+        <button class="Rbtn" onclick="window.location.reload()">Restart</button>
+
+      </div>
+
+
+        <div class="congratulationstwo">
+          <h1>CONGRATULATIONS</h1>
+          <h2> 🎉 PLAYER TWO  WINNS 🎉 </h2>
+          <h2><h2 > PLAYER TWO SCORE :  <span id="totaltwo"></span> <h2 style="color:red;"> PLAYER ONE LOST !!</h2>
+        <button class="Rbtn" onclick="window.location.reload()">Restart</button>
+      </div>
+
+
+  <script src="GAME.js"></script>
+</body>
+
+</html>

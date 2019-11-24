@@ -28,43 +28,43 @@ app.use("/", function(req,res,next){
 });
 
 app.use(express.static('img',{root : __dirname}));
+app.use(express.static("C:/Users/mohit/Documents/GitHub/Team7/Client/LEVEL1/LEVEL2/img"));
 app.use(express.static('C:/Users/mohit/Documents/GitHub/Team7/Client'));
 app.use(express.static('C:/User/mohit/Documents/GitHub/Team7/Client/LEVEL1'));
 app.use(express.static('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2'));
 app.use(express.static('C:/Users/mohit/Documents/GitHub/Team7/Client/ajaxFile'));
 
-app.get ('/',function(req,res)
-{ 
-    res.sendFile('details.html',{root : __dirname});
-});
 
-app.post('/details.html',urlencodedParser,function(req,res)
+
+app.post('/finish',urlencodedParser,function(req,res)
 {
-    var formdata=req.body.name +" "+ req.body.score;
+    var formdata=req.body.name ;
     console.log(req.body);
     res.send(formdata);
-    res.sendFile('/Homepage.html');
+    res.sendFile('/finish.html');
 
 });
+
 
 app.get ('/homepage.html',function(req,res)
 { 
     res.sendFile('homepage.html',{root : __dirname});
 });
-// app.post()
 
 
-app.get ('/LEVEL1/Level1',function(req,res)
+app.get ('/finish',function(req,res)
 { 
-    res.sendFile('LEVEL1/Level1.html',{root:__dirname});
+    res.sendFile('/finish.html',{root:__dirname});
+    
     this.name = req.query.name;
-    var sql = "INSERT INTO highscore VALUES ('"+ this.name+"',0);";
-
+    var sql = "INSERT INTO highscore VALUES ('"+ this.name +"',1500);";
+    
     con.query(sql, function(err){
         if(err)
             res.end("Error.");
     });
 });
+
 
 app.get ('/Helppage.html',function(req,res)
 { 
@@ -74,8 +74,8 @@ app.get ('/Helppage.html',function(req,res)
 app.get ('/resume',function(req,res)
 { 
     res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/LEVEL2/Level2.html');
-}
-);
+    
+});
 
 app.listen(53906,function()
 {

@@ -9,21 +9,23 @@
 </head>
 
 <body>
-
+      <form action="/finish" mehod="get">
      <div class="canvas">
-        <header> | Life : <span id="health">0</span> | Score : <span id="score"></span></header>
+        <header> | Life : <span id="health">0</span> | Score : <span id="score" name=score></span></header>
      <div class="game-canvas">
       <div class="game"></div>
       <div class="congratulations">
         <h1>CONGRATULATIONS</h1>
         <h2> 🎉 YOU WON 🎉 </h2>
         <h2>Your Score : <span id="total"></span></h2>
-        <button class="Rbtn" onclick="window.location.reload()">Restart</button>
+        <button type="submit" class="Rbtn">Restart</button>
+        <button type="submit" value="Finish Game!"></button>
       </div>
       <div class="game-over">
         <h1>GAME OVER</h1>
         <h2>YOU LOST TRY AGAIN!</h2>
         <button class="Rbtn" onclick="window.location.reload()">Restart</button>
+        
       </div>
     </div>
   </div>
@@ -496,6 +498,7 @@ window.requestAnimationFrame(update);
 
 
   </script>
+</form>
 </body>
 
 </html>

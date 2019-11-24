@@ -11,8 +11,6 @@ const KEYCODE_D = 68;
 const SPACE =32;
 
 
-
-
 // game canvas wdith and height 
 
 const GAME_WIDTH = 800;
@@ -40,6 +38,7 @@ const ENEMY_VERTICAL_PADDING = 70;
 const ENEMY_VERTICAL_SPACING = 80;
 const ENEMY_COOLDOWN = 5.0;
 
+//game state 
 const LASEROPS_STATE = {
   lastTime: Date.now(),
   leftPressed: false,
@@ -61,10 +60,13 @@ const LASEROPS_STATE = {
   gameOver: false
 };
 
-var health=0;
+//health and scores 
+var health=100;
 var score=0;
+var healthtwo=100;
+var scoretwo=0;
 
-function rectsIntersect(r1, r2) {
+function rIntersect(r1, r2) {
   return !(
     r2.left > r1.right ||
     r2.right < r1.left ||
@@ -73,12 +75,12 @@ function rectsIntersect(r1, r2) {
   );
 }
 
-function setPosition(el, x, y) {
+function setMove(el, x, y) {
   el.style.transform = `translate(${x}px, ${y}px)`;
 }
 
 // we use this to stop the player from getting outside the game canvas
-function clamp(v, min, max) {
+function keepPlayersincanvas(v, min, max) {
   if (v < min) {
     return min;
   } else if (v > max) {
@@ -88,7 +90,8 @@ function clamp(v, min, max) {
   }
 }
 
-function rand(min, max) {
+//display enieme arrangment 
+function eniemesrand(min, max) {
   if (min === undefined) min = 0;
   if (max === undefined) max = 1;
   return min + Math.random() * (max - min);
@@ -101,7 +104,7 @@ function createPlayer($container) {
   $player.src = "img/playertwo.png";
   $player.className = "player";
   $container.appendChild($player);
-  setPosition($player, LASEROPS_STATE.playerX, LASEROPS_STATE.playerY);
+  setMove($player, LASEROPS_STATE.playerX, LASEROPS_STATE.playerY);
 }
 
 function createPlayerTwo($container) {
@@ -111,21 +114,19 @@ function createPlayerTwo($container) {
   $player2.src = "img/player1.png";
   $player2.className = "player2";
   $container.appendChild($player2);
-  setPosition($player2, LASEROPS_STATE.player2X, LASEROPS_STATE.player2Y);
+  setMove($player2, LASEROPS_STATE.player2X, LASEROPS_STATE.player2Y);
 }
 
 function destroyPlayer($container, player) {
   $container.removeChild(player);
-  LASEROPS_STATE.gameOver = true;
-  //const audio = new Audio("");
-  //audio.play();
+  document.querySelector(".congratulationstwo").style.display = "block";
+
 }
 
 function destroyPlayerTwo($container, player2) {
   $container.removeChild(player2);
-  LASEROPS_STATE.gameOver = true;
-  //const audio = new Audio("");
-  //audio.play();
+  document.querySelector(".congratulations").style.display = "block";
+
 }
 
 function updatePlayer(dt, $container) {
@@ -136,7 +137,7 @@ function updatePlayer(dt, $container) {
     LASEROPS_STATE.playerX += dt * PLAYER_MAX_SPEED;
   }
 
-  LASEROPS_STATE.playerX = clamp(
+  LASEROPS_STATE.playerX = keepPlayersincanvas(
     LASEROPS_STATE.playerX,
     PLAYER_WIDTH,
     GAME_WIDTH - PLAYER_WIDTH
@@ -151,7 +152,7 @@ function updatePlayer(dt, $container) {
   }
 
   const player = document.querySelector(".player");
-  setPosition(player, LASEROPS_STATE.playerX, LASEROPS_STATE.playerY);
+  setMove(player, LASEROPS_STATE.playerX, LASEROPS_STATE.playerY);
 }
 
 function updatePlayerTwo(dt, $container) {
@@ -162,7 +163,7 @@ function updatePlayerTwo(dt, $container) {
     LASEROPS_STATE.player2X += dt * PLAYER2_MAX_SPEED;
   }
 
-  LASEROPS_STATE.player2X = clamp(
+  LASEROPS_STATE.player2X = keepPlayersincanvas(
     LASEROPS_STATE.player2X,
     PLAYER2_WIDTH,
     GAME_WIDTH - PLAYER2_WIDTH
@@ -177,7 +178,7 @@ function updatePlayerTwo(dt, $container) {
   }
 
   const player2 = document.querySelector(".player2");
-  setPosition(player2, LASEROPS_STATE.player2X, LASEROPS_STATE.player2Y);
+  setMove(player2, LASEROPS_STATE.player2X, LASEROPS_STATE.player2Y);
 }
 
 function createLaser($container, x, y) {
@@ -187,9 +188,7 @@ function createLaser($container, x, y) {
   $container.appendChild($element);
   const laser = { x, y, $element };
   LASEROPS_STATE.lasers.push(laser);
-  //const audio = new Audio("");
-  //audio.play();
-  setPosition($element, x, y);
+  setMove($element, x, y);
 }
 
 function createLaserTwo($container, x, y) {
@@ -198,10 +197,8 @@ function createLaserTwo($container, x, y) {
   $element.className = "laser2";
   $container.appendChild($element);
   const laser2 = { x, y, $element };
-  LASEROPS_STATE.lasers.push(laser2);
-  //const audio = new Audio("");
-  //audio.play();
-  setPosition($element, x, y);
+  LASEROPS_STATE.lasers2.push(laser2);
+  setMove($element, x, y);
 }
 
 function updateLasers(dt, $container) {
@@ -212,17 +209,21 @@ function updateLasers(dt, $container) {
     if (laser.y < 0) {
       destroyLaser($container, laser);
     }
-    setPosition(laser.$element, laser.x, laser.y);
+    setMove(laser.$element, laser.x, laser.y);
     const r1 = laser.$element.getBoundingClientRect();
     const enemies = LASEROPS_STATE.enemies;
     for (let j = 0; j < enemies.length; j++) {
       const enemy = enemies[j];
       if (enemy.isDead) continue;
       const r2 = enemy.$element.getBoundingClientRect();
-      if (rectsIntersect(r1, r2)) {
+      if (rIntersect(r1, r2)) {
         // Enemy was hit
+        
         destroyEnemy($container, enemy);
         destroyLaser($container, laser);
+        score += 100;
+        document.getElementById('score').innerHTML = score;
+        document.getElementById('total').innerHTML = score;
         break;
       }
     }
@@ -238,17 +239,20 @@ function updateLasersTwo(dt, $container) {
     if (laser2.y < 0) {
       destroyLaser($container, laser2);
     }
-    setPosition(laser2.$element, laser2.x, laser2.y);
+    setMove(laser2.$element, laser2.x, laser2.y);
     const s1 = laser2.$element.getBoundingClientRect();
     const enemies = LASEROPS_STATE.enemies;
     for (let j = 0; j < enemies.length; j++) {
       const enemy = enemies[j];
       if (enemy.isDead) continue;
       const s2 = enemy.$element.getBoundingClientRect();
-      if (rectsIntersect(s1, s2)) {
+      if (rIntersect(s1, s2)) {
         // Enemy was hit
-        destroyEnemy($container, enemy);
-        destroyLaser($container, laser);
+        destroyEnemytwo($container, enemy);
+        destroyLaserTwo($container, laser2);
+        scoretwo += 100;
+        document.getElementById('scoretwo').innerHTML = scoretwo;
+        document.getElementById('totaltwo').innerHTML = scoretwo;
         break;
       }
     }
@@ -274,11 +278,11 @@ function createEnemy($container, x, y) {
   const enemy = {
     x,
     y,
-    cooldown: rand(0.5, ENEMY_COOLDOWN),
+    cooldown: eniemesrand(0.5, ENEMY_COOLDOWN),
     $element
   };
   LASEROPS_STATE.enemies.push(enemy);
-  setPosition($element, x, y);
+  setMove($element, x, y);
 }
 
 function updateEnemies(dt, $container) {
@@ -290,7 +294,7 @@ function updateEnemies(dt, $container) {
     const enemy = enemies[i];
     const x = enemy.x + dx;
     const y = enemy.y + dy;
-    setPosition(enemy.$element, x, y);
+    setMove(enemy.$element, x, y);
     enemy.cooldown -= dt;
     if (enemy.cooldown <= 0) {
       createEnemyLaser($container, x, y);
@@ -303,10 +307,16 @@ function updateEnemies(dt, $container) {
 function destroyEnemy($container, enemy) {
   $container.removeChild(enemy.$element);
   enemy.isDead = true;
-  score += 50;
-  document.getElementById('score').innerHTML = score;
-  document.getElementById('total').innerHTML = score;
 }
+
+
+
+function destroyEnemytwo($container, enemy) {
+  $container.removeChild(enemy.$element);
+  enemy.isDead = true;
+  
+}
+
 
 function createEnemyLaser($container, x, y) {
   const $element = document.createElement("img");
@@ -315,29 +325,30 @@ function createEnemyLaser($container, x, y) {
   $container.appendChild($element);
   const laser = { x, y, $element };
   LASEROPS_STATE.enemyLasers.push(laser);
-  setPosition($element, x, y);
+  setMove($element, x, y);
 }
 
 function updateEnemyLasers(dt, $container) {
   const lasers = LASEROPS_STATE.enemyLasers;
+  const player = document.querySelector(".player");
   for (let i = 0; i < lasers.length; i++) {
     const laser = lasers[i];
     laser.y += dt * LASER_MAX_SPEED;
     if (laser.y > GAME_HEIGHT) {
       destroyLaser($container, laser);
     }
-    setPosition(laser.$element, laser.x, laser.y);
+    setMove(laser.$element, laser.x, laser.y, player);
     const r1 = laser.$element.getBoundingClientRect();
-    const player = document.querySelector(".player");
+    
     const r2 = player.getBoundingClientRect();
-    if (rectsIntersect(r1, r2)) {
+    if (rIntersect(r1, r2)) {
       // Player was hit
-      destroyPlayer($container, player);
-      break;
-      health -= 1;
+
+      health -= 10;
       document.getElementById('health').innerHTML = health;
       destroyLaser($container, laser);
       if(health == 0){
+       document.querySelector(".congratulationstwo").style.display = "block";
         destroyPlayer($container, player);
         break;
       }
@@ -348,24 +359,24 @@ function updateEnemyLasers(dt, $container) {
 
 function updateEnemyLasersTwo(dt, $container) {
   const lasers2 = LASEROPS_STATE.enemyLasers;
+  const player2 = document.querySelector(".player2");
   for (let i = 0; i < lasers2.length; i++) {
     const laser2 = lasers2[i];
     laser2.y += dt * LASER_MAX_SPEED;
     if (laser2.y > GAME_HEIGHT) {
       destroyLaserTwo($container, laser2);
     }
-    setPosition(laser2.$element, laser2.x, laser2.y);
+    setMove(laser2.$element, laser2.x, laser2.y, player2);
     const s1 = laser2.$element.getBoundingClientRect();
-    const player2 = document.querySelector(".player2");
+    
     const s2 = player2.getBoundingClientRect();
-    if (rectsIntersect(s1, s2)) {
+    if (rIntersect(s1, s2)) {
       // Player was hit
-      destroyPlayerTwo($container, player2);
-      break;
-      health -= 1;
-      document.getElementById('health').innerHTML = health;
+      healthtwo -= 10;
+      document.getElementById('healthtwo').innerHTML = healthtwo;
       destroyLaser($container, laser2);
-      if(health == 0){
+      if(healthtwo == 0){
+       document.querySelector(".congratulations").style.display = "block";
         destroyPlayerTwo($container, player2);
         break;
       }
@@ -375,10 +386,11 @@ function updateEnemyLasersTwo(dt, $container) {
 }
 
 function init() {
-  health = 5;
-  score = 0;
+
   document.getElementById('health').innerHTML = health;
   document.getElementById('score').innerHTML = score;
+  document.getElementById('healthtwo').innerHTML = healthtwo;
+  document.getElementById('scoretwo').innerHTML = scoretwo;
   const $container = document.querySelector(".game");
   createPlayer($container);
   createPlayerTwo($container);
@@ -395,20 +407,21 @@ function init() {
 }
 
 function playerHasWon() {
+  
   return LASEROPS_STATE.enemies.length === 0;
+  
+}
+if(playerHasWon==true){
+  window.location ='details.html';
 }
 
 function update(e) {
   const currentTime = Date.now();
   const dt = (currentTime - LASEROPS_STATE.lastTime) / 1000.0;
-
-  if (LASEROPS_STATE.gameOver) {
-    document.querySelector(".game-over").style.display = "block";
-    return;
-  }
-
   if (playerHasWon()) {
     document.querySelector(".congratulations").style.display = "block";
+    window.location ='details.html';
+    
     return;
   }
 

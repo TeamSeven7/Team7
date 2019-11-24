@@ -11,7 +11,7 @@
 <body>
 
      <div class="canvas">
-        <header> | Life : <span id="health">0</span> | Score : <span id="score"></span></header>
+        <header> | Life : <span id="health">0</span> | Score : <span id="score" name=score></span></header>
      <div class="game-canvas">
       <div class="game"></div>
       <div class="congratulations">
@@ -427,6 +427,7 @@ function init() {
 
 function playerHasWon() {
   return LASEROPS_STATE.enemies.length === 0;
+  
 }
 
 function update(e) {

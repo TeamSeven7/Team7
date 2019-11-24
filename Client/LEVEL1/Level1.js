@@ -282,7 +282,7 @@ function ensureSprite(sprite){
     }
     if (EnemiesDead == 13) {
         alert("Congratulations! Please continue to the  next level.");
-  window.location ='LEVEL2/Level2.html';
+  window.location ='LEVEL2/LEVEL-2-.html';
   clearInterval(interval);
     }
   }
