@@ -3,6 +3,19 @@ var app=express();
 var path = require("path");
 var bodyParser = require('body-parser');
 
+var mysql = require('mysql');
+var name = "";
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "leaderboard"
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+  });
 const dataparser=require("body-parser");
 const urlencodedParser=
 dataparser.urlencoded({extended:false});
@@ -41,9 +54,16 @@ app.get ('/homepage.html',function(req,res)
 // app.post()
 
 
-app.get ('/LEVEL1/Level1.html',function(req,res)
+app.get ('/LEVEL1/Level1',function(req,res)
 { 
-    res.sendFile('C:/Users/mohit/Documents/GitHub/Team7/Client/LEVEL1/Level1.html');
+    res.sendFile('LEVEL1/Level1.html',{root:__dirname});
+    this.name = req.query.name;
+    var sql = "INSERT INTO highscore VALUES ('"+ this.name+"',0);";
+
+    con.query(sql, function(err){
+        if(err)
+            res.end("Error.");
+    });
 });
 
 app.get ('/Helppage.html',function(req,res)

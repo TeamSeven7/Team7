@@ -1,34 +1,23 @@
 <html>
     <head>
-        <script>
+        <form action = "/LEVEL1/Level1" method = "get">
+        
+            
 
-            function sendData(){
-                var name=document.getElementById("name").value;
-                var score=document.getElementById("score").value;
-                var httpr = new XMLHttpRequest();
-                httpr.open("POST","./ajaxFile/getData.php",true);
-                httpr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-                httpr.onreadystatechange=function(){
-                    if(httpr.readyState==4 && httpr.status==200){
-                        document.getElementById("response").innerHTML=httpr.responseText;
-                    }
-                }
-                    httpr.send("name="+name+"&score="+score);
-            }
-        </script>>
-        <div class="form">
+            
             <center> <h1>Enter your details please:</h1></center>
             <br>
-            <center>Name: <input type="text" id = name></center>
+            <center>Name: <input type="text"  name = "name"></center>
             <br>
             <center>Score: <input type="text" id = score></center>
             <br>
-            <center><input type="button" value="submit" onclick="sendData()"></center>
+            <center><input type="submit" value="submit"></center>
             <br>
             <span id="response">
 
             </span>
-        </div>
+       
+    </form>
 
     </head>
 </html>
