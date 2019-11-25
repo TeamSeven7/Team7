@@ -23,7 +23,7 @@ LaserOps is packed with exciting levels, difficult obstacles to surpass and load
   
   4. Player 1 Can use the WASD Keys to move the player and the Space Bar to shoot the enemies.
   
-  5. Player 2 can move the player by using the arrow keys and use the Enter/Return key tp shoot the enemies. 
+  5. Player 2 can move the player by using the arrow keys and use the Enter/Return key to shoot the enemies. 
 
  
 # Minimum Requirements:-
