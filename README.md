@@ -13,6 +13,14 @@ LaserOps is packed with exciting levels, difficult obstacles to surpass and load
    4. You should install PHPMyAdmin before playing this game and Install the (dataDump.sql) file.
    5. The Game might not work on your computer if the Directory is not set to the one in your computer.
    6. --IF YOU DO OT CHANGE THE NAME OF THE DIRECTORIES, THE STATIC IMAGES WON'T BE DISPLAYED.
+   7. PHPMyAdmin Username="root" and there is no password.
+
+# Level 1-
+    If both the players achieve a combined enemy kill count of 13, they proceed to the next level.
+
+# Level 2-
+   If Either one of the player dies , they have a chance to restart and play again until they win.
+   After they win, they have a chance to enter their names into the leaderboard.
 # How to Play:-
 
   1. The maximum number of players in the game are 2.
