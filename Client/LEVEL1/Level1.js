@@ -1,3 +1,4 @@
+// Variables required throughout the program
 var POLeft =65, PORight=68, POUp=87, PODown=83;
 var PTLeft =37, PTRight=39, PTUp=38, PTDown=40;
 var Space=32;
@@ -13,11 +14,12 @@ var EnemiesDead = 0;
 var P1Score = 0;
 var P2Score = 0;
 
-  
- var con=new Object();
- var con2=new Object();
- var con3=new Object();
+// Objects used for the controls
+var con=new Object();
+var con2=new Object();
+var con3=new Object();
 
+// Because the game uses collision, we need to get the x, y, width and height of objects to make it work
 function DeclaringObjects(element, x , y , w , h){
   var result = new Object();
    result.element = element;
@@ -28,6 +30,8 @@ function DeclaringObjects(element, x , y , w , h){
 
      return result;
 }
+
+// Making the controls work for the players
 function toggleKeyTwo(keyCode, isPressed){
    if(keyCode == POLeft){
     con.left = isPressed;
@@ -68,7 +72,7 @@ if(keyCode == Space){
 }
 
 
-
+// This function makes the sprites used have correct dimensions
 function ensureSprite(sprite){
    if(sprite.x < 100){
     sprite.x=100;
@@ -85,13 +89,14 @@ function ensureSprite(sprite){
 
 }
 
-
+// This function, as in the name, sets a sprite to be able to move with controls
   function setMove(sprite){
     var p=document.getElementById(sprite.element);
     p.style.left = sprite.x + 'px';
     p.style.top = sprite.y + 'px';
   }
 
+// Making the players move when a key is pressed and making the laser work too when the key is pressed for it
   function handleControlsSecond(){
     if(con.up){
       Playerone.y -= move_playertwo;
@@ -105,13 +110,13 @@ function ensureSprite(sprite){
     if(con.right){
       Playerone.x += move_playertwo;
     }
-    if(con.space && laser.y <= -120 ){
-      laser.x = Playerone.x + 50 ;
-      laser.y = Playerone.y - laser.h;
+    if(con.space && laser.y <= -120 ){ // The maths here required a lot of testing to get correct
+      laser.x = Playerone.x + 50 ; // Makes the laser shoot out of the middle of the player
+      laser.y = Playerone.y - laser.h; // Same as above but for the height, a lot of testing needed for this one too
     }
-    ensureSprite(Playerone);
+    ensureSprite(Playerone); // ensureSprite used because the players need movement
     if(con2.up){
-      Playertwo.y -= move_playertwotwo;
+      Playertwo.y -= move_playertwotwo;  // Same as above for player2
     }
     if(con2.down){
       Playertwo.y += move_playertwotwo;
@@ -129,8 +134,8 @@ function ensureSprite(sprite){
     ensureSprite(Playertwo); 
   }
 
-  
-  var enemyshootingrepeat = window.setInterval(enemyShootingOne, 4000);
+// Following functions used to make the enemies shoot. This one was harder because of the positioning of the enemies  
+  var enemyshootingrepeat = window.setInterval(enemyShootingOne, 4000); // Making an interval timer for enemies to shoot repeatedly
   function enemyShootingOne(){
     if(enemylaser.x >= 0 ){
       enemylaser.x = Enemyone.x + 30 ;
@@ -152,7 +157,7 @@ function ensureSprite(sprite){
     
   }
 
-  var enemyshootingrepeat2 = window.setInterval(enemyShootingTwo, 7000);
+  var enemyshootingrepeat2 = window.setInterval(enemyShootingTwo, 7000); // Another timer to make it more random
 
   function enemyShootingTwo() {
     if(enemylaser2.y >= 0 ){
@@ -174,7 +179,7 @@ function ensureSprite(sprite){
 
   }
   
-  var enemyshootingrepeat3 = window.setInterval(enemyShootingThree, 3000);
+  var enemyshootingrepeat3 = window.setInterval(enemyShootingThree, 3000); // Another timer to make it more random
 
   function enemyShootingThree() {
     
@@ -202,6 +207,7 @@ function ensureSprite(sprite){
     }
   }
 
+// Function to show the objects that move on the map
   function showObjects(){
     setMove(Playerone);
     setMove(Playertwo);
@@ -223,6 +229,7 @@ function ensureSprite(sprite){
     
   }
 
+// This function determines the speed of the lasers used. Applicable for both the player and enemy lasers
   function updatePositions(){
     laser.y -= 20;
     lasertwo.y -= 20;
@@ -242,12 +249,16 @@ function ensureSprite(sprite){
             
   }
 
+// This function was used for collision detection to avoid using the collision detection library.
+// It compares the height, width, x and y elements of both the sprites that would touch each other.
+// The comparison has to be done in the correct way, i.e. (a.x<b.x) and (a.x>.bx) have different outputs.
+// This also required a lot of testing to make sure it works
   function touches(a, b) {
     return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
   }
   
   
- 
+// Function to check if a player manages to shoot an enemy, if so then up the score and remove the enemy  
   function collisionChecking(sprite){
     if (touches(sprite, laser)) {
         P1Score = P1Score + 1;
@@ -288,7 +299,7 @@ function ensureSprite(sprite){
   }
 
   
-  
+// This function checks for if an enemy laser touches a player. If so, then reduce the player health  
   function collisionCheckingPlayers(sprite) {
     ensureSprite(healthcounter);
     if (touches(sprite, enemylaser))  {
@@ -353,6 +364,7 @@ function ensureSprite(sprite){
 
 }
 
+// Same as above but for player2
 function collisionCheckingPlayersTwo(sprite) {
   ensureSprite(healthcounter2);
   if (touches(sprite, enemylaser))  {
@@ -418,7 +430,7 @@ if (P2Health==0)
 }
 
 
-
+// This function is required to constantly check the functions, which is why the Date is also used to make it continue over
 function loop(){
   if(new Date ().getTime() - ll  > 40){
     updatePositions();
@@ -444,6 +456,8 @@ function loop(){
   }
   setTimeout('loop();' , 2);
 }
+
+// Functions to check if buttons are pressed
 document.onkeydown = function(evt){
 toggleKeyTwo(evt.keyCode , true);
 };
@@ -453,8 +467,8 @@ toggleKeyTwo(evt.keyCode , false);
 };
 
 
-
-
+// Declaring all the objects on the page and positioning them and making their hitboxes correct
+// Using the x,y, width and height of the elements.
 var Playerone=DeclaringObjects('Playerone',430,460,65,100);
 var Playertwo=DeclaringObjects('Playertwo',330,460,65,100);
 var Enemyone=DeclaringObjects('Enemyone',1130,20,65,40);
