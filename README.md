@@ -10,19 +10,20 @@ LaserOps is packed with exciting levels, difficult obstacles to surpass and load
    1. All the game related files are in the CLIENT folder inside the TEAM7 Folder.
    2. You have to open the "Multiplayer.js" file via VS Code or a terminal window and run the node commands.
    3. If the game is not loading properly, Check your Directory in the Multiplayer.js file in the Client folder.
+   4. You should install PHPMyAdmin before playing this game and Install the (dataDump.sql) file.
+   5. The Game might not work on your computer if the Directory is not set to the one in your computer.
 # How to Play:-
 
   1. The maximum number of players in the game are 2.
   
   2. Knockout the eniemes with your team mate to win the game - Simple!
+
+  3. If you succesfully finish the game, You have the chance to enter into the Game Highscore leaderboard.
   
-  # LEVEL 1 & 2
+  4. Player 1 Can use the WASD Keys to move the player and the Space Bar to shoot the enemies.
   
- 1. Use W/A/S/D/ space to shoot _ UP,DOWN,LEFT,RIGHT Enter to shoot keys to navigate your planet.
-  
-    #LEVEL 2
-    
- 2. Use A/D Space to shoot _ LEFT/RIGHT _ Enter to shoot  
+  5. Player 2 can move the player by using the arrow keys and use the Enter/Return key tp shoot the enemies. 
+
  
 # Minimum Requirements:-
 
