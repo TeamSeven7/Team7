@@ -12,6 +12,7 @@ LaserOps is packed with exciting levels, difficult obstacles to surpass and load
    3. If the game is not loading properly, Check your Directory in the Multiplayer.js file in the Client folder.
    4. You should install PHPMyAdmin before playing this game and Install the (dataDump.sql) file.
    5. The Game might not work on your computer if the Directory is not set to the one in your computer.
+   6. --IF YOU DO OT CHANGE THE NAME OF THE DIRECTORIES, THE STATIC IMAGES WON'T BE DISPLAYED.
 # How to Play:-
 
   1. The maximum number of players in the game are 2.
