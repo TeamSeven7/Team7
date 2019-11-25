@@ -6,7 +6,7 @@
 
 LaserOps is packed with exciting levels, difficult obstacles to surpass and loads of fun!
 
-# Loading the game:;-
+# Important Points:;-
    1. All the game related files are in the CLIENT folder inside the TEAM7 Folder.
    2. You have to open the "Multiplayer.js" file via VS Code or a terminal window and run the node commands.
    3. If the game is not loading properly, Check your Directory in the Multiplayer.js file in the Client folder.
